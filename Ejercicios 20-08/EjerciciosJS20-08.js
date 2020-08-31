@@ -19,6 +19,7 @@
 
 
 
+
 //3- Escribir el código de una función a la que se pasa como parámetro un número entero y devuelve como resultado una cadena de texto que indica si el número es par o impar. Mostrar por pantalla el resultado devuelto por la función.
 
     function esPar(numero){
@@ -32,6 +33,7 @@
     //Test:
     esPar(2);
     esPar(3);
+
 
 
 
@@ -50,6 +52,10 @@
     algunoEsPar(arrayDeNumerosImpares);
     algunoEsPar(arrayDeNumerosPares);
 
+
+
+
+
 //5- Define la función aprobó, que dada la lista de las notas de un alumno devuelve si el alumno aprobó. Un alumno aprobó si todas sus notas son mayores o iguales a 4
     //Defino el array:
     arrayDeNotasDesaprobado = [8,6,2,4];
@@ -65,6 +71,9 @@
     aprobo(arrayDeNotasAprobado);
 
 
+
+
+
 //6- Define la función quienesAprobaron, que dada la información de un curso devuelve la información de los alumnos que aprobaron. Podés usar la función que hiciste en el ejercicio anterior.
     //Seteo del array
     var notasCurso = [[6,7,8],[1,1,1],[10,10,10]];
@@ -77,6 +86,7 @@
 
     //Test
     alumnosAprobados(notasCurso);
+
 
 
 
@@ -99,24 +109,49 @@
 
 
 
+
 //8- Escribi una función cuantosCumplen que dada una condición y una lista, diga cuantos elementos la cumplen
-    
 
+    //Defino el array
+    arrayCuantosCumplen = [0,1,2,3,4];
 
-    function cuantosCumplen(array){
-        console.log(array.forEach((element) => esPar(element)));
-        // array.find((elemento) => funcion(elemento));
-    }
-    function esPar(numero){
-        if(numero % 2==1){                 //Con el % valido el resto. Si sobra uno, es impar
-            return true;
-        }else{
+    //Defino la función even, que devuelve true o false si es par o impar respectivamente.
+    function even(numero){
+        if(numero % 2==1){
             return false;
+        }else{
+            return true;
         } 
     }
-    // if(esPar(element)){
-    //     count++;
-    // }
+
+    //Creo la función cuantosCumplen()
+    function cuantosCumplen(array){
+        console.log(array.filter(element => even(element)).length);
+    }
+
+    //Test
+    cuantosCumplen(arrayCuantosCumplen); //Debe devolver 3 (0, 2 y 4)
+
+
+
+
+
+    
+//9- Escribí una función rechazar, que dada una condición y un array, devuelva un array con los elementos que no la cumplen
+
+    //Defino el array
+    arrayRechazar = [7,9,87,42];
+
+    //Creo la función cuantosCumplen()
+    function rechazar(array){
+        console.log(array.filter(element => !even(element)));
+    }
+
+    //Test
+    rechazar(arrayRechazar); //Debe devolver [7, 9, 87]
+
+
+
 
 
 
