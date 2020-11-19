@@ -5,7 +5,7 @@ import { StyleSheet, Text, View, TextInput, Button  } from 'react-native';
 const axios = require("axios");
 //import axios from "axios";
 
-export class HomeScreen extends Component {
+export class ConsultarIP extends Component {
 
     //Constructor donde seteamos el estado de consultado en False, para que no muestre la info de retorno de la api
     constructor(props){

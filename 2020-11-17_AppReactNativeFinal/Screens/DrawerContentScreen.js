@@ -27,8 +27,8 @@ export class DrawerContentScreen extends Component {
                         />
                         <DrawerItem 
                             icon={() => <Icon type="material-community" name="calendar" style={styles.icon}/>}
-                            label="Info"
-                            onPress={() => this.props.navigation.navigate("Info")}
+                            label="Consultar IP"
+                            onPress={() => this.props.navigation.navigate("Consultar IP")}
                         />
                     </View>
                 </DrawerContentScrollView>
