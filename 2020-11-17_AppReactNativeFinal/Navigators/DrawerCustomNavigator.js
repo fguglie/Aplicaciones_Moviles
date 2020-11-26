@@ -6,7 +6,6 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import Home from "../Screens/Home";
 import {ConsultarIP} from "../Screens/ConsultarIP";
 import {DrawerContentScreen} from "../Screens/DrawerContentScreen";
-console.log(Home, ConsultarIP);
 
 const Drawer = createDrawerNavigator();
 

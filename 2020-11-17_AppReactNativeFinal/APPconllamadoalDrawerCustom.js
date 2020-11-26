@@ -5,13 +5,6 @@ import {DrawerDefaultNavigator} from './Navigators/DrawerDefaultNavigator';
 import {DrawerCustomNavigator} from './Navigators/DrawerCustomNavigator.js';
 import LoginScreen from './Screens/LoginScreen';
 
-import Home from "./Screens/Home";
-import {ConsultarIP} from "./Screens/ConsultarIP";
-import {DrawerContentScreen} from "./Screens/DrawerContentScreen";
-import { createDrawerNavigator } from '@react-navigation/drawer';
-
-const Drawer = createDrawerNavigator();
-
 export default class App extends Component {
   
   constructor(props){
@@ -35,14 +28,7 @@ export default class App extends Component {
       screen =
       <NavigationContainer>
         {/* <DrawerDefaultNavigator /> */}
-        <Drawer.Navigator 
-          initialRouteName="Home"
-          headerMode={'none'}
-          drawerContent={props => <DrawerContentScreen {...props}/>}
-        >
-          <Drawer.Screen name="Home" component={Home} />
-          <Drawer.Screen name="Consultar IP" component={ConsultarIP} />
-          </Drawer.Navigator>
+        <DrawerCustomNavigator />
       </NavigationContainer>
     }
   return (screen);
