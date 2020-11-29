@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { DrawerItem, DrawerContentScrollView } from '@react-navigation/drawer';
 import {View, StyleSheet} from "react-native";
 import { Icon } from 'react-native-elements'
+
 const axios = require("axios");
 
 export class DrawerContentScreen extends Component {
@@ -11,8 +12,11 @@ export class DrawerContentScreen extends Component {
     }
 
     handlerLogout(){
-        console.log("Logout");
+        this.props.onLogout();
     }
+
+    
+
 
     render(){
 
@@ -33,11 +37,11 @@ export class DrawerContentScreen extends Component {
                     </View>
                 </DrawerContentScrollView>
                 <View style={styles.bottomDrawer}>
-                    <DrawerItem 
+                    {/* <DrawerItem 
                         icon={() => <Icon type="material-community" name="cogs" style={styles.icon}/>}
                         label="Configuration"
                         onPress={() => this.handlerConfiguration()}
-                    />
+                    /> */}
                     <DrawerItem 
                         icon={() => <Icon type="material-community" name="logout" style={styles.icon}/>}
                         label="Logout"

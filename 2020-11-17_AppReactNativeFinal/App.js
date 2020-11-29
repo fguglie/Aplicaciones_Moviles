@@ -37,16 +37,14 @@ export default class App extends Component {
         {/* <DrawerDefaultNavigator /> */}
         <Drawer.Navigator 
           initialRouteName="Home"
-          headerMode={'none'}
-          drawerContent={props => <DrawerContentScreen {...props}/>}
+          drawerContent={props => <DrawerContentScreen {...props} onLogout={() =>this.setLogout()}/> }
         >
           <Drawer.Screen name="Home" component={Home} />
           <Drawer.Screen name="Consultar IP" component={ConsultarIP} />
-          </Drawer.Navigator>
+        </Drawer.Navigator>
       </NavigationContainer>
     }
-  return (screen);
-
+    return (screen);
   }
 }
 
