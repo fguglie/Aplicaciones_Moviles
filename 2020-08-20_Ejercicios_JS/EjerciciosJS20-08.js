@@ -81,7 +81,7 @@
     //Funcion
     function alumnosAprobados(arrayOfArrays){
         console.log(
-            arrayOfArrays.filter(array => array.every(val => val>4)));
+            arrayOfArrays.filter(array => array.every(val => val>=4)));
     }
 
     //Test
@@ -115,6 +115,8 @@
     //Defino el array
     arrayCuantosCumplen = [0,1,2,3,4];
 
+    //Ejercicio inicial: Contiene errores. Mas abajo se detalla la corrección del mismo.
+    /*
     //Defino la función even, que devuelve true o false si es par o impar respectivamente.
     function even(numero){
         if(numero % 2==1){
@@ -123,14 +125,34 @@
             return true;
         } 
     }
-
+	
     //Creo la función cuantosCumplen()
-    function cuantosCumplen(array){
+	function cuantosCumplen(array){
         console.log(array.filter(element => even(element)).length);
     }
 
     //Test
     cuantosCumplen(arrayCuantosCumplen); //Debe devolver 3 (0, 2 y 4)
+	*/
+    
+
+
+
+
+    //SE CORRIGE EJERCICIO 8, para que sea tomado desde la función cuantosCumplen(funcCondicion, arrayElem):
+    
+    //Creo la función condición que detallará los pares
+    var funcCondicion = (element) => element % 2 === 0;
+
+    // Creo la función cuantosCumplen()
+    function cuantosCumplen (funcionCondicion, array){
+        array = arrayCuantosCumplen.filter(funcionCondicion);
+        return console.log(array.length);
+    } 
+
+    //Testeo la función
+    cuantosCumplen(funcCondicion, arrayCuantosCumplen); //Debe devolver 3 (0, 2 y 4)
+
 
 
 
@@ -140,8 +162,10 @@
 //9- Escribí una función rechazar, que dada una condición y un array, devuelva un array con los elementos que no la cumplen
 
     //Defino el array
-    arrayRechazar = [7,9,87,42];
+    arrayRechazar = [0,1,2,7,9,87,42];
 
+    // Se corrige el ejercicio tal cual fue solicitado. A continuación está el codigo anterior y mas abajo el nuevo código.
+    /*
     //Creo la función cuantosCumplen()
     function rechazar(array){
         console.log(array.filter(element => !even(element)));
@@ -150,9 +174,26 @@
     //Test
     rechazar(arrayRechazar); //Debe devolver [7, 9, 87]
 
+    */
 
 
 
+
+
+
+    //CORRECCIÓN EJERCICIO 9: Ahora creo la función rechazar, donde le paso los parámetros de la función condición y el array, de los que listará los elementos que no sean mayores a 10.
+
+    //Creo la función condición que devolvera un array con los elementos que NO sean mayores a 10
+    const funcCondicion = (element => !(element>10));
+
+    // Creo la función rechazar()
+    function rechazar(funcionCondicion, array){
+        array = arrayRechazar.filter(funcionCondicion);
+        return console.log(array);
+    } 
+
+    //Testeo la función
+    rechazar(funcCondicion, arrayRechazar); //Debe devolver 5 (0, 1, 2, 7 y 9)
 
 
 //10- Contiene - some
@@ -162,7 +203,7 @@
 
     //Funcion
     function contiene(numero, array){ 
-        console.log(array.some((element) => element==numero));
+        console.log(array.some((element) => element===numero));
     }
 
     //Test
